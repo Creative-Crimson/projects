@@ -1,0 +1,38 @@
+@import "./variabel.scss";
+
+@mixin font-spacing($x) {
+  margin: 0 $x;
+  padding: $x;
+}
+
+%my-color {
+  color:$primary-color;
+  background-color: $secondary-color;
+}
+
+h1 {
+  @extend %my-color;
+  @include font-spacing(8px)
+}
+
+nav {
+  ul {
+    display: flex;
+  }
+
+  .item {
+    background-color: $secondary-color;
+    list-style: none;
+    @include font-spacing(15px);
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 500px){
+  h1 {
+    background-color: aquamarine;
+  }
+}
